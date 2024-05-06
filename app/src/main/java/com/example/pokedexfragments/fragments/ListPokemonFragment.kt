@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pokedexfragments.R
+import com.example.pokedexfragments.adapters.PokemonAdapter
 import com.example.pokedexfragments.databinding.FragmentListPokemonBinding
+import com.example.pokedexfragments.model.Pokemon
 
 
 class ListPokemonFragment : Fragment() {
@@ -23,7 +25,10 @@ class ListPokemonFragment : Fragment() {
         val linearLayoutManager = LinearLayoutManager(requireContext())
         binding.recyclerPokemons.layoutManager = linearLayoutManager
 
-        
+        val adapterPokemon = PokemonAdapter()
+        adapterPokemon.pokemons = Pokemon.pokemonList
+        binding.recyclerPokemons.adapter = adapterPokemon
+
 
        return binding.root
     }

@@ -1,4 +1,5 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <!-- Si necesitas alguna variable específica aquí -->
     </data>
@@ -6,6 +7,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_pokemons"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/pokemon_list_item"/>
 
 </layout>
