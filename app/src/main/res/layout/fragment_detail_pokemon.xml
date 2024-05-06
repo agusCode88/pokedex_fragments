@@ -28,7 +28,7 @@
             android:textSize="18sp"
             android:background="@color/hp_pokemon_detail"
             android:textColor="@color/black"
-            android:text="xxxxx"/>
+            android:text="HP: - "/>
 
         <TextView
             android:id="@+id/txt_pokemon_attack"
@@ -40,7 +40,7 @@
             android:textSize="18sp"
             android:background="@color/primary"
             android:textColor="@color/black"
-            android:text="xxxxx"/>
+            android:text="Attack: -"/>
 
     </LinearLayout>
 
@@ -59,7 +59,7 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:text="xxxxx"/>
+            android:text="Defense: -"/>
 
         <TextView
             android:id="@+id/txt_pokemon_velocity"
@@ -71,7 +71,7 @@
             android:textSize="18sp"
             android:background="@color/hp_pokemon_velocity"
             android:textColor="@color/black"
-            android:text="xxxxx"/>
+            android:text="Speed: - "/>
 
     </LinearLayout>
 
