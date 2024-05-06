@@ -38,7 +38,7 @@
             android:padding="16dp"
             android:gravity="center"
             android:textSize="18sp"
-            android:background="@color/hp_pokemon_atacck"
+            android:background="@color/primary"
             android:textColor="@color/black"
             android:text="xxxxx"/>
 
@@ -74,8 +74,5 @@
             android:text="xxxxx"/>
 
     </LinearLayout>
-
-
-
 
 </LinearLayout>
