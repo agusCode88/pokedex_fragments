@@ -5,8 +5,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.pokedexfragments.fragments.ListPokemonFragment
+import com.example.pokedexfragments.model.Pokemon
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , ListPokemonFragment.PokemonSelectListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,4 +19,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
+
+    override fun onPokemonSelected(pokemon: Pokemon) {
+
+    }
+
+    /*fun iAmYourFatherActivity(pokemon: Pokemon){
+
+    }*/
 }
