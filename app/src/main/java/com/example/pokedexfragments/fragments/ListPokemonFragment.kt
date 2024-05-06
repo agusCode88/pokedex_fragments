@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pokedexfragments.R
+import com.example.pokedexfragments.databinding.FragmentListPokemonBinding
 
 
 class ListPokemonFragment : Fragment() {
@@ -13,9 +15,17 @@ class ListPokemonFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
+       val binding= FragmentListPokemonBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_pokemon, container, false)
+
+        val linearLayoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerPokemons.layoutManager = linearLayoutManager
+
+        
+
+       return binding.root
     }
 
 }
