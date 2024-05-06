@@ -1,6 +1,7 @@
 package com.example.pokedexfragments.adapters
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,7 +9,12 @@ import com.example.pokedexfragments.R
 import com.example.pokedexfragments.databinding.PokemonListItemBinding
 import com.example.pokedexfragments.model.Pokemon
 
+
+private val TAG = PokemonAdapter::class.java.simpleName
+
 class PokemonAdapter:  RecyclerView.Adapter< PokemonAdapter.ViewHolder >() {
+
+    lateinit var  onItemClickListener: (Pokemon) -> Unit
 
     var pokemons = mutableListOf<Pokemon>()
         @SuppressLint("NotifyDataSetChanged")
@@ -47,6 +53,14 @@ class PokemonAdapter:  RecyclerView.Adapter< PokemonAdapter.ViewHolder >() {
            }
 
            binding.pokemonTypeImage.setImageResource(imageId)
+
+           binding.root.setOnClickListener {
+               if(::onItemClickListener.isInitialized)
+                    onItemClickListener(pokemon)
+               else
+                   Log.e(TAG,"Listener not initializer")
+           }
+
        }
 
 
