@@ -32,7 +32,7 @@ class DetailPokemonFragment : Fragment() {
 
     fun initUI(pokemon: Pokemon){
         setDownloadPokemonImage(pokemon)
-        binding.txtPokemonHp.text =getString(R.string.hp_format, pokemon.hp)
+        binding.txtPokemonHp.text = getString(R.string.hp_format, pokemon.hp)
         binding.txtPokemonAttack.text = getString(R.string.attack_format, pokemon.attack)
         binding.txtPokemonDefense.text = getString(R.string.defense_format, pokemon.defense)
         binding.txtPokemonVelocity.text = getString(R.string.velocity_format, pokemon.speed)
