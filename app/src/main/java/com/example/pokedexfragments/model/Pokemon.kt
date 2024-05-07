@@ -1,20 +1,67 @@
 package com.example.pokedexfragments.model
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.example.pokedexfragments.R
 
-class Pokemon(
+
+data class Pokemon(
     val id:Long,
-    val name: String,
+    val name: String?,
     val hp: Int,
     val attack: Int,
     val defense: Int,
     val speed: Int,
     val type: PokemonType,
-    val imageUrl: String,
+    val imageUrl: String?,
     val soundId: Int
-) {
+): Parcelable {
 
-    companion object {
+    constructor(parcel: Parcel) : this(
+        parcel.readLong(),
+        parcel.readString(),
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readInt(),
+        parcel.readInt(),
+        TODO("type"),
+        parcel.readString(),
+        parcel.readInt()
+    )
+
+    enum class PokemonType{
+        GRASS,
+        FIRE,
+        WATER,
+        FIGHTER,
+        ELECTRIC
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeLong(id)
+        parcel.writeString(name)
+        parcel.writeInt(hp)
+        parcel.writeInt(attack)
+        parcel.writeInt(defense)
+        parcel.writeInt(speed)
+        parcel.writeString(imageUrl)
+        parcel.writeInt(soundId)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Pokemon> {
+        override fun createFromParcel(parcel: Parcel): Pokemon {
+            return Pokemon(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Pokemon?> {
+            return arrayOfNulls(size)
+        }
+
+
         val pokemonList = mutableListOf(
             Pokemon(1, "Bulbasaur", 45, 49,
                 49, 45, Pokemon.PokemonType.GRASS, "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.bulbagarden.net%2Fupload%2Fthumb%2F1%2F19%2FAsh_Bulbasaur.png%2F1200px-Ash_Bulbasaur.png&f=1&nofb=1", R.raw.bulbasaur
@@ -63,13 +110,5 @@ class Pokemon(
 
 
         val dataEmpty= mutableListOf<Pokemon>()
-
-    }
-    enum class PokemonType{
-        GRASS,
-        FIRE,
-        WATER,
-        FIGHTER,
-        ELECTRIC
     }
 }

@@ -15,5 +15,10 @@
     <fragment
         android:id="@+id/detailNavPokemonFragment"
         android:name="com.example.pokedexfragments.fragments.DetailNavPokemonFragment"
-        android:label="DetailNavPokemonFragment" />
+        android:label="DetailNavPokemonFragment" >
+        <argument
+            android:name="pokemon"
+            app:argType="com.example.pokedexfragments.model.Pokemon"
+            app:nullable="true" />
+    </fragment>
 </navigation>
