@@ -1,6 +1,7 @@
 package com.example.pokedexfragments.fragments
 
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,10 +37,13 @@ class DetailPokemonFragment : Fragment() {
         binding.txtPokemonAttack.text = getString(R.string.attack_format, pokemon.attack)
         binding.txtPokemonDefense.text = getString(R.string.defense_format, pokemon.defense)
         binding.txtPokemonVelocity.text = getString(R.string.velocity_format, pokemon.speed)
+        val mediaPlayer: MediaPlayer = MediaPlayer.create(requireActivity(),pokemon.soundId)
+        mediaPlayer.start()
 
     }
 
     private fun setDownloadPokemonImage(pokemon: Pokemon){
+
         binding.pbImg.visibility = View.VISIBLE
         Glide.with(this).load(pokemon.imageUrl).listener(object : RequestListener<Drawable>{
             override fun onLoadFailed(
