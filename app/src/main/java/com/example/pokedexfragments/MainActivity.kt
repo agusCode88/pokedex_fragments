@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() , ListPokemonFragment.PokemonSelectList
 
         detailPokemonFragment = supportFragmentManager.findFragmentById(R.id.fragment_detail)
                     as DetailPokemonFragment
-
-
     }
 
     override fun onPokemonSelected(pokemon: Pokemon) {

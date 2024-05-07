@@ -6,12 +6,27 @@
     android:orientation="vertical"
     tools:context=".fragments.DetailPokemonFragment">
 
-    <ImageView
+    <FrameLayout
+
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:scaleType="centerCrop"
-        android:background="@drawable/bulbausaur"
-        android:adjustViewBounds="true"/>
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_pokemon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:background="@drawable/bulbausaur"
+            android:adjustViewBounds="true"/>
+
+        <ProgressBar
+            android:id="@+id/pb_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
